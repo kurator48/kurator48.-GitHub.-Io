@@ -1,0 +1,71 @@
+<button class="btn btn-primary" type="submit">Отправить заявку</button>
+          <div class="notice" id="successMessage">Заявка подготовлена. Сейчас откроется Telegram для отправки администратору.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container footer-content">
+    <div>
+      <div class="logo">
+        <img src="images/logo.png" alt="Лиски Мастер" class="logo-mark">
+        <span>Лиски Мастер</span>
+      </div>
+      <p style="margin-top: 8px;">Сервис поиска специалистов в Лисках</p>
+    </div>
+    <p>Администратор: <a href="https://t.me/global70Astahov" target="_blank">@global70Astahov</a></p>
+  </div>
+</footer>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const categoryFilter = document.getElementById("categoryFilter");
+  const masterCards = document.querySelectorAll(".master-card");
+  const emptyResult = document.getElementById("emptyResult");
+  function filterMasters() {
+    const search = searchInput.value.toLowerCase().trim();
+    const category = categoryFilter.value;
+    let visibleCount = 0;
+    masterCards.forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      const cardCategory = card.dataset.category;
+      const text = card.innerText.toLowerCase();
+      const matchesSearch = !search || name.includes(search) || text.includes(search);
+      const matchesCategory = !category || cardCategory === category;
+      if (matchesSearch && matchesCategory) { card.style.display = ""; visibleCount++; } else { card.style.display = "none"; }
+    });
+    emptyResult.style.display = visibleCount === 0 ? "block" : "none";
+  }
+  searchInput.addEventListener("input", filterMasters);
+  categoryFilter.addEventListener("change", filterMasters);
+  function selectCategory(category) {
+    categoryFilter.value = category;
+    document.getElementById("masters").scrollIntoView({ behavior: "smooth" });
+    filterMasters();
+  }
+  function searchFromHero() {
+    const value = document.getElementById("heroSearch").value;
+    searchInput.value = value;
+    document.getElementById("masters").scrollIntoView({ behavior: "smooth" });
+    filterMasters();
+  }
+  function openRequest(masterName) {
+    document.getElementById("description").value = "Хочу связаться со специалистом: " + masterName;
+    document.getElementById("request").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("clientName").focus();
+  }
+  document.getElementById("requestForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("clientName").value;
+    const phone = document.getElementById("clientPhone").value;
+    const service = document.getElementById("service").value || "Не указана";
+    const description = document.getElementById("description").value || "Не указано";
+    const message = "Здравствуйте! Новая заявка с сайта «Лиски Мастер».%0A%0A" + "Имя: " + encodeURIComponent(name) + "%0A" + "Контакт: " + encodeURIComponent(phone) + "%0A" + "Услуга: " + encodeURIComponent(service) + "%0A" + "Описание: " + encodeURIComponent(description);
+    document.getElementById("successMessage").style.display = "block";
+    setTimeout(() => { window.open("https://t.me/global70Astahov?text=" + message, "_blank"); }, 500);
+  });</script>
+</body>
+</html>
+</script>
+</body>
+</html>

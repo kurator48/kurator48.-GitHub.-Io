@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лиски Мастер — мастера и услуги в Лисках, Воронежская область</title>
+<meta name="description" content="Электрики, сантехники, уборка, перевозки и ремонт в Лисках. Оставьте заявку или зарегистрируйтесь как мастер.">
+<meta name="theme-color" content="#1d2428">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Лиски Мастер — мастера и услуги в Лисках">
+<meta property="og:description" content="Подберём мастера для ремонта, уборки и перевозок в Лисках.">
+<!-- TODO: укажите адрес сайта после публикации -->
+<!-- <link rel="canonical" href="https://ВАШ-ДОМЕН/"> -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛠️%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#1d2428;--muted:#5d6a72;--bg:#eef0ee;--card:#fff;--line:#d9dedb;--orange:#f26a1b;--orange-d:#c9520d;--teal:#0e6b6b;--ok:#15803d;--r:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Roboto,system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.wrap{width:min(1120px,calc(100% - 28px));margin:0 auto}
+section,.hero{scroll-margin-top:76px}
+header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:10}
+.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;white-space:nowrap}
+.mark{background:var(--orange);color:var(--ink);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:15px;font-weight:900}
+.links{display:flex;gap:22px;font-size:14px;color:#c5cdd2}
+.links a:hover{color:#fff}
+.btn{border:2px solid transparent;border-radius:8px;padding:11px 18px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .15s}
+.btn-o{background:var(--orange);color:var(--ink)}
+.btn-o:hover{background:#ff7d33}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-line{border-color:var(--ink);background:#fff}
+.btn-line:hover{background:var(--ink);color:#fff}
+.hero{background:var(--ink);color:#fff;padding:64px 0 72px;border-top:1px solid #33404a}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,58px);line-height:1.05;letter-spacing:-.02em;margin-bottom:18px}
+.hero p{color:#c5cdd2;font-size:18px;max-width:520px;margin-bottom:26px}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+.panel{background:#fff;color:var(--ink);border-radius:14px;padding:24px;border-bottom:6px solid var(--orange)}
+.panel h2{font-size:20px;margin-bottom:12px}
+.search{display:flex;gap:8px}
+.search input{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:5px 12px;font-size:13px}
+.chip:hover{border-color:var(--orange)}
+section.s{padding:60px 0}
+.head{margin-bottom:24px}
+.head h2{font-size:30px;line-height:1.15;margin-bottom:6px}
+.head p{color:var(--muted)}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 10px;text-align:center;font-weight:700;font-size:14px}
+.cat:hover{border-color:var(--orange);background:#fff8f3}
+.cat span{display:block;font-size:30px;margin-bottom:6px}
+.alt{background:#e2e7e4}
+.demo{background:#fff4e8;border:1px solid #f7c99e;border-radius:var(--r);padding:12px 14px;font-size:14px;margin-bottom:18px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.filters input,.filters select{border:1px solid var(--line);background:#fff;border-radius:8px;padding:11px 13px;min-width:200px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px}
+.top{display:flex;gap:12px;align-items:center}
+.ava{width:48px;height:48px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-size:19px;flex:none}
+.card h3{font-size:17px}
+.tag{font-size:12px;color:var(--teal);font-weight:700}
+.card p{color:var(--muted);font-size:14px;flex:1}
+.bot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+.price{font-weight:800}
+.price small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.empty{display:none;background:#fff;border:1px dashed #aab4ba;border-radius:var(--r);padding:26px;text-align:center}
+.empty p{margin-bottom:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:#fff;border-radius:var(--r);padding:22px;border-left:5px solid var(--orange)}
+.step b{font-size:12px;color:var(--orange-d)}
+.step h3{margin:4px 0 6px}
+.step p{color:var(--muted);font-size:14px}
+.box{background:#fff;border-radius:16px;padding:32px;display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start;border:1px solid var(--line)}
+.box h2{font-size:28px;line-height:1.15;margin-bottom:10px}
+.box>div>p{color:var(--muted);margin-bottom:14px}
+.tg{color:var(--teal);font-weight:700;text-decoration:underline}
+form{display:grid;gap:11px}
+.f{width:100%;border:1px solid #b9c2c7;border-radius:8px;padding:12px;background:#fff}
+textarea.f{min-height:90px;resize:vertical}
+label.ck{display:flex;gap:9px;font-size:13px;color:var(--muted);align-items:flex-start}
+label.ck input{margin-top:3px;width:17px;height:17px;flex:none}
+label.ck a{color:var(--teal);text-decoration:underline}
+.note{display:none;background:#f0fdf4;border:1px solid #86efac;color:#14532d;border-radius:8px;padding:12px;font-size:14px}
+.err{display:none;color:#b91c1c;font-size:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.perks{list-style:none;display:grid;gap:8px;margin:16px 0}
+.perks li:before{content:"✓ ";color:var(--ok);font-weight:800}
+footer{background:var(--ink);color:#c5cdd2;padding:30px 0;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{color:#ffb27f;text-decoration:underline}
+dialog{border:0;border-radius:14px;max-width:560px;width:calc(100% - 28px);padding:26px;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+dialog h2{margin-bottom:10px}
+dialog p{font-size:14px;margin-bottom:10px;color:#39454c}
+[hidden]{display:none!important}
+@media(max-width:900px){.hero-grid,.box{grid-template-columns:1fr}.cats{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.links{display:none}.hero{padding:44px 0 50px}.cats{grid-template-columns:repeat(2,1fr)}.grid,.steps,.two{grid-template-columns:1fr}.filters input,.filters select{width:100%;min-width:0}.box{padding:22px 16px}.search{flex-direction:column}.nav .btn{padding:9px 12px;font-size:13px}section.s{padding:44px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="mark">ЛМ</span>Лиски Мастер</a>
+    <nav class="links" aria-label="Разделы">
+      <a href="#categories">Услуги</a><a href="#masters">Мастера</a><a href="#how">Как это работает</a><a href="#join">Стать мастером</a><a href="#admin" id="adminLink" hidden>Заявки</a>
+    </nav>
+    <a class="btn btn-o" href="#request">Оставить заявку</a>
+  </div>
+</header>
+
+<!-- ГЛАВНАЯ -->
+<main id="home">
+  <div class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Мастер для любой задачи в Лисках</h1>
+        <p>Ремонт, электрика, сантехника, уборка и перевозки. Опишите задачу — администратор подберёт мастера и передаст ему заявку.</p>
+        <div class="acts">
+          <a class="btn btn-o" href="#request">Оставить заявку</a>
+          <a class="btn btn-ghost" href="#masters">Смотреть мастеров</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Какая услуга нужна?</h2>
+        <div class="search">
+          <input id="heroSearch" type="search" placeholder="Например: сантехник" aria-label="Поиск услуги">
+          <button class="btn btn-o" id="heroBtn" type="button">Найти</button>
+        </div>
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="s" id="categories">
+    <div class="wrap">
+      <div class="head"><h2>Выберите услугу</h2><p>Работаем в Лисках и ближайших посёлках</p></div>
+      <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <section class="s alt" id="masters">
+    <div class="wrap">
+      <div class="head"><h2>Мастера</h2><p>Выберите специалиста или оставьте общую заявку</p></div>
+      <div class="demo"><b>Сайт запускается.</b> Анкеты ниже — примеры, чтобы показать, как будет выглядеть каталог. Вы мастер? <a class="tg" href="#join">Зарегистрируйтесь</a> — и ваша анкета появится здесь.</div>
+      <div class="filters">
+        <input id="q" type="search" placeholder="Поиск по имени или услуге" aria-label="Поиск">
+        <select id="cf" aria-label="Категория"></select>
+      </div>
+      <div class="grid" id="list"></div>
+      <div class="empty" id="empty" role="status">
+        <p id="emptyText"></p>
+        <a class="btn btn-o" href="#request" id="emptyBtn">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="how">
+    <div class="wrap">
+      <div class="head"><h2>Как это работает</h2><p>От заявки до мастера — три шага</p></div>
+      <div class="steps">
+        <div class="step"><b>Шаг 1</b><h3>Опишите задачу</h3><p>Что нужно сделать и где находится объект.</p></div>
+        <div class="step"><b>Шаг 2</b><h3>Мы подберём мастера</h3><p>Администратор найдёт исполнителя и передаст ему заявку.</p></div>
+        <div class="step"><b>Шаг 3</b><h3>Договоритесь напрямую</h3><p>Стоимость, время приезда и детали вы обсуждаете с мастером.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s alt" id="request">
+    <div class="wrap">
+      <div class="box">
+        <div>
+          <h2>Не нашли нужного мастера?</h2>
+          <p>Оставьте заявку — мы постараемся подобрать специалиста под вашу задачу. Стоимость услуг сайт не гарантирует: её называет мастер.</p>
+          <a class="tg" href="https://t.me/global70Astahov" target="_blank" rel="noopener">Написать администратору в Telegram</a>
+        </div>
+        <form id="reqForm" novalidate>
+          <input class="f" id="cName" placeholder="Ваше имя" autocomplete="name" required>
+          <input class="f" id="cPhone" placeholder="Телефон или Telegram" autocomplete="tel" required>
+          <select class="f" id="cService"></select>
+          <textarea class="f" id="cDesc" placeholder="Кратко опишите задачу"></textarea>
+          <label class="ck"><input type="checkbox" id="cOk"><span>Согласен на обработку персональных данных согласно <a href="#" data-policy>политике конфиденциальности</a></span></label>
+          <div class="err" id="cErr"></div>
+          <button class="btn btn-o" type="submit">Отправить заявку в Telegram</button>
+          <div class="note" id="cNote"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- РЕГИСТРАЦИЯ МАСТЕРА -->
+<main id="joinView" hidden>
+  <section class="s">
+    <div class="wrap">
+      <div class="box">
+        <div>
+          <h2>Регистрация мастера</h2>
+          <p>Заполните анкету. Администратор свяжется с вами, уточнит детали и добавит вас в каталог.</p>
+          <ul class="perks">
+            <li>Заявки от жителей Лисок и района</li>
+            <li>Бесплатное размещение анкеты на старте</li>
+            <li>Вы сами договариваетесь о цене с клиентом</li>
+          </ul>
+          <a class="tg" href="#top">← На главную</a>
+        </div>
+        <form id="mForm" novalidate>
+          <div class="two">
+            <input class="f" id="mName" placeholder="Имя и фамилия" autocomplete="name" required>
+            <input class="f" id="mPhone" placeholder="Телефон или Telegram" autocomplete="tel" required>
+          </div>
+          <select class="f" id="mCat"></select>
+          <div class="two">
+            <input class="f" id="mExp" placeholder="Опыт, лет" inputmode="numeric">
+            <input class="f" id="mPrice" placeholder="Цена, например: от 800 ₽">
+          </div>
+          <textarea class="f" id="mAbout" placeholder="Чем занимаетесь: какие работы делаете, есть ли инструмент и транспорт"></textarea>
+          <label class="ck"><input type="checkbox" id="mOk"><span>Согласен на обработку персональных данных и публикацию имени, услуг и цены в каталоге. <a href="#" data-policy>Политика конфиденциальности</a></span></label>
+          <div class="err" id="mErr"></div>
+          <button class="btn btn-o" type="submit">Отправить анкету в Telegram</button>
+          <div class="note" id="mNote"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="adminView" hidden><section class="s"><div class="wrap">
+  <div class="head"><h2>Панель администратора</h2><p>Всё, что отправили клиенты и мастера, сохраняется здесь автоматически</p></div>
+  <h3 style="margin-bottom:10px">Анкеты мастеров на проверке</h3><div class="grid" id="admM"></div>
+  <h3 style="margin:28px 0 10px">Заявки клиентов</h3><div class="grid" id="admR"></div>
+</div></section></main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b style="color:#fff">Лиски Мастер</b> · сервис поиска специалистов в Лисках<br><span id="year"></span></div>
+    <div>Администратор: <a href="https://t.me/global70Astahov" target="_blank" rel="noopener">@global70Astahov</a> · <a href="#" data-policy>Конфиденциальность</a></div>
+  </div>
+</footer>
+
+<dialog id="policy">
+  <h2>Политика конфиденциальности</h2>
+  <!-- TODO: вставьте реквизиты оператора (ФИО/ИП/самозанятый, контакты) и проверьте текст с юристом -->
+  <p>Мы собираем только данные, которые вы указываете в форме: имя, телефон или Telegram, описание задачи или анкеты мастера.</p>
+  <p>Данные используются, чтобы связаться с вами и подобрать мастера или клиента. Заявка передаётся администратору сайта через Telegram, а данные мастера могут публиковаться в каталоге.</p>
+  <p>Сайт не хранит данные на собственном сервере. Вы можете попросить удалить ваши данные, написав администратору в Telegram.</p>
+  <button class="btn btn-o" id="policyClose" type="button">Понятно</button>
+</dialog>
+
+<script>
+const ADMIN = "global70Astahov";
+const CATS = [["Ремонт и отделка","🏠"],["Электрика","⚡"],["Сантехника","🔧"],["Клининг","🧹"],["Перевозки","🚚"],["Мастер на час","🛠️"],["Сборка мебели","🪑"],["Ремонт техники","📱"],["Репетиторы","📚"],["Другая услуга","➕"]];
+// Примеры анкет. Замените на реальных мастеров и уберите demo:true, когда они появятся.
+const MASTERS = [
+  {n:"Алексей Петров",c:"Электрика",d:"Розетки, освещение, проводка",p:"от 800 ₽",u:"за услугу",demo:1},
+  {n:"Сергей Иванов",c:"Сантехника",d:"Трубы, смесители, отопление",p:"от 700 ₽",u:"за услугу",demo:1},
+  {n:"Марина Кузнецова",c:"Клининг",d:"Уборка квартир, домов, офисов после ремонта",p:"от 1 500 ₽",u:"за уборку",demo:1},
+  {n:"Дмитрий Орлов",c:"Перевозки",d:"Грузоперевозки, переезды, грузчики",p:"от 1 000 ₽",u:"за заказ",demo:1},
+  {n:"Николай Смирнов",c:"Мастер на час",d:"Мелкий ремонт, установка, навеска",p:"от 600 ₽",u:"за час",demo:1},
+  {n:"Ольга Васильева",c:"Ремонт и отделка",d:"Поклейка обоев, покраска, косметический ремонт",p:"от 900 ₽",u:"за м²",demo:1}
+];
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const opts = (first, list) => `<option value="">${first}</option>` + list.map(c => `<option>${c}</option>`).join("");
+const names = CATS.map(c => c[0]);
+const catNames = names.filter(n => n !== "Другая услуга");
+
+$("cats").innerHTML = CATS.map(([n,i]) => `<button class="cat" data-cat="${n}"><span>${i}</span>${n}</button>`).join("");
+$("chips").innerHTML = ["Электрик","Сантехник","Уборка","Перевозки"].map(t => `<button class="chip" type="button" data-q="${t}">${t}</button>`).join("");
+$("cf").innerHTML = opts("Все категории", catNames);
+$("cService").innerHTML = opts("Выберите услугу", names);
+$("mCat").innerHTML = opts("Ваша специальность", catNames);
+$("year").textContent = "© " + new Date().getFullYear();
+
+let DBM = [];
+function renderList(){
+  const all = DBM.map(x => ({n:x.name,c:x.category,d:x.about||"",p:x.price||"по договорённости",u:"",demo:0})).concat(MASTERS);
+  $("list").innerHTML = all.map(m => `
+  <article class="card" data-cat="${esc(m.c)}" data-s="${esc((m.n+" "+m.c+" "+m.d).toLowerCase())}">
+    <div class="top"><div class="ava">${esc(m.n[0]||"?")}</div><div><h3>${esc(m.n)}</h3><div class="tag">${esc(m.c)}${m.demo?" · пример анкеты":""}</div></div></div>
+    <p>${esc(m.d)}</p>
+    <div class="bot"><div class="price">${esc(m.p)}<small>${m.u}</small></div>
+    <button class="btn btn-line" data-contact="${esc(m.n)}">Связаться</button></div>
+  </article>`).join("");
+  filter();
+}
+renderList();
+
+function stem(w){ return w.length > 5 ? w.slice(0, -2) : w; } // «электрик» найдёт «электрика»
+function filter(){
+  const q = $("q").value.toLowerCase().trim(), cat = $("cf").value;
+  let n = 0;
+  document.querySelectorAll(".card").forEach(c => {
+    const ok = (!q || c.dataset.s.includes(q) || c.dataset.s.includes(stem(q))) && (!cat || c.dataset.cat === cat);
+    c.hidden = !ok; if (ok) n++;
+  });
+  const e = $("empty");
+  e.style.display = n ? "none" : "block";
+  if (!n) {
+    $("emptyText").textContent = cat && !q ? `В категории «${cat}» пока нет мастеров. Оставьте заявку — мы найдём исполнителя.` : "Ничего не найдено. Оставьте заявку — мы найдём исполнителя.";
+    $("emptyBtn").onclick = () => { if (cat) $("cService").value = cat; };
+  }
+}
+$("q").addEventListener("input", filter);
+$("cf").addEventListener("change", filter);
+
+function goMasters(){ show("home"); setTimeout(() => $("masters").scrollIntoView({behavior:"smooth"}), 30); filter(); }
+$("cats").addEventListener("click", e => {
+  const b = e.target.closest("[data-cat]"); if (!b) return;
+  const cat = b.dataset.cat;
+  if (cat === "Другая услуга") { $("cService").value = cat; location.hash = "request"; return; }
+  $("q").value = ""; $("cf").value = cat; goMasters();
+});
+$("chips").addEventListener("click", e => { const b = e.target.closest("[data-q]"); if (b) { $("heroSearch").value = b.dataset.q; heroSearch(); } });
+function heroSearch(){ $("q").value = $("heroSearch").value; $("cf").value = ""; goMasters(); }
+$("heroBtn").onclick = heroSearch;
+$("heroSearch").addEventListener("keydown", e => { if (e.key === "Enter") heroSearch(); });
+$("list").addEventListener("click", e => {
+  const b = e.target.closest("[data-contact]"); if (!b) return;
+  $("cDesc").value = "Хочу связаться с мастером: " + b.dataset.contact;
+  location.hash = "request"; setTimeout(() => $("cName").focus(), 400);
+});
+
+// Страницы: главная / регистрация мастера
+function show(v){ $("home").hidden = v !== "home"; $("joinView").hidden = v !== "join"; $("adminView").hidden = v !== "admin"; }
+let db = null, isAdmin = false;
+function route(){
+  const h = location.hash.slice(1);
+  if (h === "join") { show("join"); scrollTo(0,0); return; }
+  if (h === "admin" && isAdmin) { show("admin"); scrollTo(0,0); return; }
+  show("home");
+  if (h && $(h)) setTimeout(() => $(h).scrollIntoView(), 0); else scrollTo(0,0);
+}
+addEventListener("hashchange", route); route(); filter();
+
+// Сохранение: в базу (если доступна), иначе запасной вариант через Telegram.
+async function submit(coll, data, text, note){
+  data.createdAt = new Date().toISOString();
+  const tg = "https://t.me/" + ADMIN + "?text=" + encodeURIComponent(text);
+  note.style.display = "block";
+  if (!db) {
+    try { navigator.clipboard && navigator.clipboard.writeText(text); } catch(e){}
+    note.textContent = "Открываем Telegram. Если текст не появился в чате, вставьте его — он скопирован. Отправьте сообщение, и заявка будет принята.";
+    if (!window.open(tg, "_blank")) location.href = tg;
+    return;
+  }
+  try {
+    await db.collection(coll).add(data);
+    note.innerHTML = 'Готово, данные сохранены. Администратор увидит их в панели. Можно дополнительно <a class="tg" href="' + tg + '" target="_blank" rel="noopener">сообщить в Telegram</a>.';
+  } catch (e) {
+    note.innerHTML = 'Не удалось сохранить автоматически. <a class="tg" href="' + tg + '" target="_blank" rel="noopener">Отправьте это в Telegram</a>.';
+  }
+}
+function validate(name, contact, ok, errEl){
+  const digits = contact.replace(/\D/g, "");
+  let msg = "";
+  if (name.trim().length < 2) msg = "Укажите имя.";
+  else if (!(digits.length >= 10 || /^@?[A-Za-z0-9_]{5,}$/.test(contact.trim()))) msg = "Укажите телефон (10+ цифр) или ник в Telegram.";
+  else if (!ok) msg = "Подтвердите согласие на обработку данных.";
+  errEl.textContent = msg; errEl.style.display = msg ? "block" : "none";
+  return !msg;
+}
+$("reqForm").addEventListener("submit", e => {
+  e.preventDefault();
+  if (!validate($("cName").value, $("cPhone").value, $("cOk").checked, $("cErr"))) return;
+  const d = {name:$("cName").value.trim(), contact:$("cPhone").value.trim(), service:$("cService").value||"не указана", desc:$("cDesc").value.trim()||"не указано", status:"new"};
+  submit("requests", d, `Новая заявка с сайта «Лиски Мастер»
+Имя: ${d.name}
+Контакт: ${d.contact}
+Услуга: ${d.service}
+Описание: ${d.desc}`, $("cNote"));
+});
+$("mForm").addEventListener("submit", e => {
+  e.preventDefault();
+  if (!validate($("mName").value, $("mPhone").value, $("mOk").checked, $("mErr"))) return;
+  if (!$("mCat").value) { $("mErr").textContent = "Выберите специальность."; $("mErr").style.display = "block"; return; }
+  const d = {name:$("mName").value.trim(), contact:$("mPhone").value.trim(), category:$("mCat").value, exp:$("mExp").value.trim()||"не указан", price:$("mPrice").value.trim()||"не указана", about:$("mAbout").value.trim()||"", status:"pending"};
+  submit("masters", d, `Анкета мастера с сайта «Лиски Мастер»
+Имя: ${d.name}
+Контакт: ${d.contact}
+Специальность: ${d.category}
+Опыт, лет: ${d.exp}
+Цена: ${d.price}
+О себе: ${d.about||"не указано"}`, $("mNote"));
+});
+
+// База данных и панель администратора
+function watchAdmin(){
+  db.collection("masters").where("status","==","pending").onSnapshot(sn => {
+    $("admM").innerHTML = sn.empty ? "<p>Новых анкет нет.</p>" : sn.docs.map(d => { const m = d.data(); return `<article class="card"><h3>${esc(m.name)}</h3><div class="tag">${esc(m.category)}</div><p>${esc(m.contact)}<br>Опыт: ${esc(m.exp)} · ${esc(m.price)}<br>${esc(m.about)}</p><div class="bot"><button class="btn btn-o" data-ok="${d.id}">Одобрить</button><button class="btn btn-line" data-del="masters/${d.id}">Удалить</button></div></article>`; }).join("");
+  }, () => {});
+  db.collection("requests").orderBy("createdAt","desc").limit(100).onSnapshot(sn => {
+    $("admR").innerHTML = sn.empty ? "<p>Заявок пока нет.</p>" : sn.docs.map(d => { const r = d.data(); return `<article class="card"><h3>${esc(r.name)}</h3><div class="tag">${esc(r.service)} · ${esc((r.createdAt||"").slice(0,10))}</div><p>${esc(r.contact)}<br>${esc(r.desc)}</p><div class="bot"><button class="btn btn-line" data-del="requests/${d.id}">Обработана, удалить</button></div></article>`; }).join("");
+  }, () => {});
+}
+$("adminView").addEventListener("click", e => {
+  const ok = e.target.closest("[data-ok]"), del = e.target.closest("[data-del]");
+  if (ok) db.doc("masters/" + ok.dataset.ok).update({status:"approved"}).catch(() => {});
+  if (del && confirm("Удалить?")) db.doc(del.dataset.del).delete().catch(() => {});
+});
+(async () => {
+  try { db = await claude.use("db"); } catch(e) {}
+  try { const u = await claude.use("user"); isAdmin = !!(u && u.canEdit()); } catch(e) {}
+  if (db) {
+    db.collection("masters").where("status","==","approved").onSnapshot(sn => { DBM = sn.docs.map(d => d.data()); renderList(); }, () => {});
+    if (isAdmin) { $("adminLink").hidden = false; watchAdmin(); }
+  }
+  route();
+})();
+
+// Политика конфиденциальности
+document.addEventListener("click", e => { if (e.target.closest("[data-policy]")) { e.preventDefault(); $("policy").showModal(); } });
+$("policyClose").onclick = () => $("policy").close();
+</script>
+</body>
+</html>
